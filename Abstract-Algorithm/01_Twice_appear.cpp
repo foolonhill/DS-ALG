@@ -4,6 +4,11 @@
 * Problem description:
 *         an array, only one element appears twice, others all once. Find the twice one.
 */
+#include <iostream>
+#include <algorithm>
+
+int Twice(int a[], int size);
+int QuickTwice(int a[], int size);
 
 int main()
 {
@@ -30,3 +35,16 @@ int Twice(int a[], int size)
     return a[twice];
 }
 
+// a quick solution, O(n*lgn) + O(n) = O(n*lgn)
+int QuickTwice(int a[], int size)
+{
+    std::sort(a, a+size);
+    
+    int twice = 0;
+    for (int i = 1; i < size; i++) {
+        if (a[i] == a[i - 1]) {
+            twice = i;
+        }                
+    }
+    return a[twice];
+}
