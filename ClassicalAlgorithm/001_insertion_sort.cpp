@@ -65,6 +65,11 @@ void InsertSort2(int a[], int n)
 	    else
 		break;
 	}
+	/*  an alternative way for the inner loop
+	//for (j = i; j > 0 && tmp < a[j-1]; j--)
+        //    a[j] = a[j-1];
+	*/    
+	    
 	a[j] = tmp;
     }
 }
