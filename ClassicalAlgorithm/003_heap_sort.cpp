@@ -31,3 +31,4 @@ void HeapSort(int a[], int len)
 		HeapAdjust(a, 1, i-1);
 	}
 }
+ 
