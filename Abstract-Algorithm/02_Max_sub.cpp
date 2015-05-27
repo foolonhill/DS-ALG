@@ -1,4 +1,8 @@
-
+/*********
+ *
+ * problem description : 求连续子序列的最大和
+ * 
+ */
 
 int max(int a, int b)
 {
