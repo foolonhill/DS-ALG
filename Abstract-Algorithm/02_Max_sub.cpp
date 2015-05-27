@@ -54,3 +54,24 @@ int MaxSub2(int a[], int n)
 
 	return max_sofar;
 }
+
+/***
+ * version 3, O(n)
+ * 
+ */
+int MaxSub3(int a[], int n)
+{
+	int max_sum = 0;
+	int max_before = 0;
+
+	for (int i = 0; i < n; i++) {
+		max_before += a[i];
+		if (max_before <= 0)
+			max_before = 0;
+
+		if (max_before > max_sum)
+			max_sum = max_before;
+	}
+
+	return max_sum;
+}
