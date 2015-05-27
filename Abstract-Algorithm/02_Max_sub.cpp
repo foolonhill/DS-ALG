@@ -3,6 +3,10 @@ int max(int a, int b)
 	return a >= b ? a : b;
 }
 
+
+/*
+** my first version, O(n)
+*/
 int MaxSub1(int a[], int n)
 {
 	if (n <= 0)
