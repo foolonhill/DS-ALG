@@ -55,3 +55,46 @@ int main()
     
     return 0;
 }
+
+
+/*
+* my second answer. Right!
+* uising DP (dynamic programming)
+*/
+class Solution {
+public:
+    string longestPalindrome(string str) {
+        size_t length = str.size();
+        size_t max_len = 1;
+        size_t start = 0;
+        
+        bool p[1000][1000] = {false};
+        for (size_t i = 0; i < length; i++) {
+            p[i][i] = true;
+            
+            if (i < length - 1 && str[i] == str[i+1]) {
+                p[i][i+1] = true;
+                max_len = 2;
+                start = i;
+            }
+        }
+        
+        for (size_t len = 3; len <= length; len++) {
+            for (size_t i = 0; i < length - len + 1; i++) {
+                size_t j = i + len - 1;
+                
+                if (str[i] == str[j] && p[i+1][j-1]) {
+                    p[i][j] = true;
+                    max_len = len;
+                    start = i;
+                }
+            }
+        }
+        
+        string ret;
+        //if (max_len >= 2)
+        ret = str.substr(start, max_len);
+        
+        return ret;    
+    }
+}
