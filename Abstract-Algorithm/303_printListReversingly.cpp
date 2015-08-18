@@ -34,3 +34,12 @@ public:
 
 
 // recursive
+void PrintListReversingly_recursive(ListNode *head)
+{
+	if (head != NULL) {
+		if (head->next != NULL) {
+			PrintListReversingly_recursive(head->next);
+		}
+		printf("%d ", head->val);
+	}
+}
