@@ -30,10 +30,13 @@ public:
                 comb[k] = nums2[j++];
         }
         
-        if ((len) % 2 != 0 )
+        /*if ((len) % 2 != 0 )
             return comb[(len) / 2];
         else
-            return (comb[len / 2] + comb[len/2 -1]) / 2.0;    // use 2.0 is very important
+            return (comb[len / 2] + comb[len/2 -1]) / 2.0;*/    // use 2.0 is very important
+        
+        // a alternative method
+        return ( comb[(len-1) / 2] + comb[len/2] ) / 2.0;
         
     }
 };
